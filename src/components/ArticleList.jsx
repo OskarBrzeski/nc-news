@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import Loading from "./Loading";
 
 function ArticleList() {
-    const [articles, setArticles] = useState([]);
+    const [articles, setArticles] = useState(null);
 
     useEffect(() => {
         getArticles()
@@ -14,6 +15,10 @@ function ArticleList() {
                 console.log(error);
             });
     }, []);
+
+    if (articles === null) {
+        return <Loading />;
+    }
 
     return (
         <ul className="article-list">

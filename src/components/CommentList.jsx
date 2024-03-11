@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../utils/api";
 import CommentCard from "./CommentCard";
+import Loading from "./Loading";
 
 function CommentList({ article_id }) {
     const [comments, setComments] = useState(null);
@@ -16,7 +17,7 @@ function CommentList({ article_id }) {
     }, []);
 
     if (comments === null) {
-        return <p>Loading...</p>;
+        return <Loading />;
     }
 
     return (
