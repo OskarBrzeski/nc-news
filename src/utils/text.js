@@ -13,3 +13,9 @@ export function shortenTitle(title) {
 
     return title;
 }
+
+export function formatDateTime(date) {
+    const newDate = new Date(date);
+
+    return newDate.toDateString();
+}
