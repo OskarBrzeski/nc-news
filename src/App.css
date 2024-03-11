@@ -10,6 +10,22 @@ header {
     margin: 0 auto;
 }
 
+.horizontal-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.horizontal-left {
+    text-align: left;
+    min-width: 125px;
+}
+
+.horizontal-right {
+    text-align: right;
+    min-width: 125px;
+}
+
 .article-list {
     display: flex;
     flex-direction: row;
@@ -37,11 +53,16 @@ header {
     border-bottom: 2px solid;
 }
 
-.article-card div {
+.article-card-title {
     min-height: 72px;
     font-size: 18pt;
     text-align: left;
     padding: 0px 8px 4px 8px;
+}
+
+.article-card-left {
+    text-align: left;
+    padding: 0px 8px;
 }
 
 .article-body {
