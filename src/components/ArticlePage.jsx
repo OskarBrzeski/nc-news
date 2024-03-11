@@ -1,10 +1,16 @@
 import { useParams } from "react-router-dom";
 import ArticleBody from "./ArticleBody";
+import ArticleComments from "./ArticleComments";
 
 function ArticlePage() {
     const { article_id } = useParams();
 
-    return <ArticleBody article_id={article_id} />;
+    return (
+        <>
+            <ArticleBody article_id={article_id} />
+            <ArticleComments article_id={article_id} />
+        </>
+    );
 }
 
 export default ArticlePage;
