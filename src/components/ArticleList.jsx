@@ -13,7 +13,7 @@ function ArticleList() {
             .catch((error) => {
                 console.log(error);
             });
-    });
+    }, []);
 
     return (
         <ul className="article-list">
