@@ -43,3 +43,17 @@ header {
     text-align: left;
     padding: 0px 8px 4px 8px;
 }
+
+.article-body {
+    text-align: left;
+    min-width: 350px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.article-body img {
+    display: block;
+    width: 99%;
+    margin: 16px auto 0;
+    border: 2px solid;
+}
