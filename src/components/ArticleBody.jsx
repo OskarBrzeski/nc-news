@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticleById } from "../utils/api";
+import Loading from "./Loading";
 
 function ArticleBody({ article_id }) {
     const [article, setArticle] = useState(null);
@@ -15,7 +16,7 @@ function ArticleBody({ article_id }) {
     }, []);
 
     if (article === null) {
-        return <p>Loading...</p>;
+        return <Loading />;
     }
 
     return (
@@ -23,7 +24,7 @@ function ArticleBody({ article_id }) {
             <h2>{article.title}</h2>
             <div>Author: {article.author}</div>
             <div>Topic: {article.topic}</div>
-            
+
             <img src={article.article_img_url} alt="current article" />
             <p>{article.body}</p>
             <div>Votes: {article.votes}</div>
