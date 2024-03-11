@@ -57,3 +57,35 @@ header {
     margin: 16px auto 0;
     border: 2px solid;
 }
+
+.comment-divider {
+    font-size: 20pt;
+    border-bottom: 2px solid;
+    margin: 8px auto;
+    max-width: 800px;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-list li {
+    width: 100%;
+    max-width: 800px;
+    margin: 16px auto;
+}
+
+.comment-card {
+    text-align: left;
+    border: 2px solid;
+    padding: 8px;
+}
+
+.comment-body {
+    margin: 8px 0;
+}
