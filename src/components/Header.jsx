@@ -4,8 +4,9 @@ function Header() {
     return (
         <header>
             <h1>NC News</h1>
-            <nav>
+            <nav className="navbar">
                 <Link to="/articles">Articles</Link>
+                <Link to="/topics">Topics</Link>
             </nav>
         </header>
     );
