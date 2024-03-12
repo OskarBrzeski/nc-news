@@ -27,3 +27,9 @@ export function updateArticleVotes(article_id, voteChange) {
             return response.data.article.votes;
         });
 }
+
+export function postComment(article_id, username, body) {
+    return api.post(`/articles/${article_id}/comments`, {username, body}).then((response) => {
+        return response.data.comment;
+    })
+}

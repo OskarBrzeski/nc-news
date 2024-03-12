@@ -6,10 +6,10 @@ function ArticlePage() {
     const { article_id } = useParams();
 
     return (
-        <>
+        <section className="article-page">
             <ArticleBody article_id={article_id} />
             <ArticleComments article_id={article_id} />
-        </>
+        </section>
     );
 }
 
