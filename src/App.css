@@ -110,3 +110,17 @@ header {
 .comment-body {
     margin: 8px 0;
 }
+
+.vote-block {
+    display: flex;
+}
+
+.vote-block button {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+}
+
+.vote-block * {
+    margin-right: 8px;
+}
