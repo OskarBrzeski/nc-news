@@ -10,6 +10,12 @@ header {
     margin: 0 auto;
 }
 
+.simple-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .horizontal-text {
     display: flex;
     justify-content: space-between;
@@ -111,6 +117,15 @@ header {
 
 .comment-body {
     margin: 8px 0;
+}
+
+.comment-delete-button {
+    padding: 4px;
+    margin: 8px 8px 0 0;
+}
+
+.comment-delete-msg {
+    margin: 8px 0 0 0;
 }
 
 .vote-block {

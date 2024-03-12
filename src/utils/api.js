@@ -28,8 +28,22 @@ export function updateArticleVotes(article_id, voteChange) {
         });
 }
 
+export function updateCommentVotes(comment_id, voteChange) {
+    return api
+        .patch(`/comments/${comment_id}`, { inc_votes: voteChange })
+        .then((response) => {
+            return response.data.comment.votes;
+        });
+}
+
 export function postComment(article_id, username, body) {
-    return api.post(`/articles/${article_id}/comments`, {username, body}).then((response) => {
-        return response.data.comment;
-    })
+    return api
+        .post(`/articles/${article_id}/comments`, { username, body })
+        .then((response) => {
+            return response.data.comment;
+        });
+}
+
+export function deleteComment(comment_id) {
+    return api.delete(`/comments/${comment_id}`);
 }
