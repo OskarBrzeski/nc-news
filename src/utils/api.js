@@ -19,3 +19,11 @@ export function getCommentsByArticleId(article_id) {
         return response.data.comments;
     });
 }
+
+export function updateArticleVotes(article_id, voteChange) {
+    return api
+        .patch(`/articles/${article_id}`, { inc_votes: voteChange })
+        .then((response) => {
+            return response.data.article.votes;
+        });
+}
