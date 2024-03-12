@@ -77,7 +77,7 @@ function AddComment({ article_id, setComments }) {
                     onBlur={handleBlur}
                 />
                 <button disabled={disabledButton} type="submit">
-                    Sumbit
+                    Add Comment
                 </button>
             </form>
             {renderStatusMessage()}
