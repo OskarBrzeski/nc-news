@@ -7,24 +7,24 @@ import { UserContext } from "../contexts/UserContext";
 function CommentCard({ comment }) {
     const { comment_id, author, created_at, body, votes } = comment;
 
-    const [deleted, setDeleted] = useState(false);
+    const [deleted, setDeleted] = useState("");
     const [disabledButton, setDisabledButton] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
 
     const { user } = useContext(UserContext);
 
     function deleteCommentHandler(event) {
+        setDeleted("Awaiting confirmation");
         setDisabledButton(true);
         setErrorMsg("");
 
         deleteComment(comment_id)
             .then(() => {
-                setDeleted(true);
+                setDeleted("This comment has been deleted");
             })
             .catch((error) => {
+                setDeleted("");
                 setErrorMsg("Could not delete comment");
-            })
-            .finally(() => {
                 setDisabledButton(false);
             });
     }
@@ -49,7 +49,7 @@ function CommentCard({ comment }) {
     if (deleted) {
         return (
             <section className="comment-card">
-                <div>This comment has been deleted</div>
+                <div>{deleted}</div>
             </section>
         );
     }
