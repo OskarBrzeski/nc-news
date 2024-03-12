@@ -36,6 +36,12 @@ header {
     padding: 0;
 }
 
+.article-page {
+    min-width: 350px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .article-list li {
     /* display: flex;
     justify-content: center; */
@@ -67,9 +73,6 @@ header {
 
 .article-body {
     text-align: left;
-    min-width: 350px;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .article-body img {
@@ -83,7 +86,6 @@ header {
     font-size: 20pt;
     border-bottom: 2px solid;
     margin: 8px auto;
-    max-width: 800px;
 }
 
 .comment-list {
@@ -93,11 +95,11 @@ header {
 
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .comment-list li {
     width: 100%;
-    max-width: 800px;
     margin: 16px auto;
 }
 
@@ -123,4 +125,31 @@ header {
 
 .vote-block * {
     margin-right: 8px;
+}
+
+.add-comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.add-comment-form label {
+    text-align: left;
+}
+
+.add-comment-form textarea {
+    padding: 4px;
+    margin: 8px 0;
+    height: 4em;
+    resize: vertical;
+    font-size: 12pt;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.add-comment-form button {
+    width: 150px;
+}
+
+.add-comment-form-empty {
+    border: 1px solid red;
 }
