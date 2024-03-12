@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { getArticleById } from "../utils/api";
+import { getArticleById, updateArticleVotes } from "../utils/api";
 import Loading from "./Loading";
+import VoteCounter from "./VoteCounter";
 
 function ArticleBody({ article_id }) {
     const [article, setArticle] = useState(null);
@@ -27,7 +28,7 @@ function ArticleBody({ article_id }) {
 
             <img src={article.article_img_url} alt="current article" />
             <p>{article.body}</p>
-            <div>Votes: {article.votes}</div>
+            <VoteCounter article_id={article_id} votes={article.votes} voteUpdater={updateArticleVotes}/>
         </section>
     );
 }
