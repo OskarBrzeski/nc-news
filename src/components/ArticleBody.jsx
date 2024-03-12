@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { getArticleById, updateArticleVotes } from "../utils/api";
-import Loading from "./Loading";
 import VoteCounter from "./VoteCounter";
+import Loading from "./Loading";
 
-function ArticleBody({ article_id }) {
+function ArticleBody({ article_id, setArticleLoaded }) {
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
         getArticleById(article_id)
             .then((article) => {
                 setArticle(article);
+                setArticleLoaded(true);
             })
             .catch((error) => {
                 console.log(error);
