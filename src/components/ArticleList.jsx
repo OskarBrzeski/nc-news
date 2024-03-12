@@ -8,7 +8,7 @@ function ArticleList() {
 
     useEffect(() => {
         getArticles()
-            .then(({ data: { articles } }) => {
+            .then((articles) => {
                 setArticles(articles);
             })
             .catch((error) => {
