@@ -1,18 +1,17 @@
 import { useState } from "react";
 
-function VoteCounter({ article_id, votes, voteUpdater }) {
+function VoteCounter({ subject_id, votes, voteUpdater }) {
     const [currentVotes, setCurrentVotes] = useState(votes);
     const [responseMsg, setResponseMsg] = useState(null);
     const [disableButtons, setDisableButtons] = useState(false);
 
     function updateVote(voteChange) {
         setDisableButtons(true);
-        setResponseMsg("Waiting for confirmation");
+        setResponseMsg(null);
         setCurrentVotes((currVotes) => currVotes + voteChange);
 
-        voteUpdater(article_id, voteChange)
+        voteUpdater(subject_id, voteChange)
             .then((serverVotes) => {
-                setResponseMsg("Your vote has been counted");
                 setCurrentVotes(() => serverVotes);
             })
             .catch((error) => {

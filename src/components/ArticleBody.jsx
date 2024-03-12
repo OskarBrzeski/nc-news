@@ -28,7 +28,11 @@ function ArticleBody({ article_id }) {
 
             <img src={article.article_img_url} alt="current article" />
             <p>{article.body}</p>
-            <VoteCounter article_id={article_id} votes={article.votes} voteUpdater={updateArticleVotes}/>
+            <VoteCounter
+                subject_id={article_id}
+                votes={article.votes}
+                voteUpdater={updateArticleVotes}
+            />
         </section>
     );
 }
