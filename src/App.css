@@ -32,6 +32,22 @@ header {
     min-width: 125px;
 }
 
+.navbar a {
+    margin: 0 8px;
+}
+
+.topic-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.topic-card {
+    border: 2px solid;
+    margin: 16px 0;
+}
+
 .article-list {
     display: flex;
     flex-direction: row;

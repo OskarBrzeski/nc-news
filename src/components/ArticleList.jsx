@@ -3,11 +3,11 @@ import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 
-function ArticleList() {
+function ArticleList({ searchParams }) {
     const [articles, setArticles] = useState(null);
 
     useEffect(() => {
-        getArticles()
+        getArticles(searchParams)
             .then((articles) => {
                 setArticles(articles);
             })
