@@ -1,13 +1,11 @@
 import { useContext, useState } from "react";
 import { postComment } from "../utils/api";
 import { UserContext } from "../contexts/UserContext";
-import CommentList from "./CommentList";
 
-function AddComment({ article_id }) {
+function AddComment({ article_id, setComments }) {
     const [inputComment, setInputComment] = useState("");
     const [inputStatus, setInputStatus] = useState(null);
     const [disabledButton, setDisabledButton] = useState(false);
-    const [successfulComments, setSuccessfulComments] = useState([]);
 
     const { user } = useContext(UserContext);
 
@@ -37,7 +35,7 @@ function AddComment({ article_id }) {
 
         postComment(article_id, user, inputComment)
             .then((comment) => {
-                setSuccessfulComments((comments) => {
+                setComments((comments) => {
                     const newComments = [comment, ...comments];
                     return newComments;
                 });
@@ -83,7 +81,6 @@ function AddComment({ article_id }) {
                 </button>
             </form>
             {renderStatusMessage()}
-            <CommentList comments={successfulComments}/>
         </>
     );
 }

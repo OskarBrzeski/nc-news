@@ -19,7 +19,7 @@ function ArticleComments({ article_id }) {
     return (
         <>
             <div className="comment-divider">Comments</div>
-            <AddComment article_id={article_id} />
+            <AddComment article_id={article_id} setComments={setComments}/>
             <CommentList article_id={article_id} comments={comments} />
         </>
     );
