@@ -8,7 +8,7 @@ function CommentList({ article_id }) {
 
     useEffect(() => {
         getCommentsByArticleId(article_id)
-            .then(({ data: { comments } }) => {
+            .then((comments) => {
                 setComments(comments);
             })
             .catch((error) => {

@@ -7,7 +7,7 @@ function ArticleBody({ article_id }) {
 
     useEffect(() => {
         getArticleById(article_id)
-            .then(({ data: { article } }) => {
+            .then((article) => {
                 setArticle(article);
             })
             .catch((error) => {
