@@ -2,8 +2,9 @@ import { getCommentsByArticleId } from "../utils/api";
 import { useState, useEffect } from "react";
 import AddComment from "./AddComment";
 import CommentList from "./CommentList";
+import Loading from "./Loading";
 
-function ArticleComments({ article_id }) {
+function ArticleComments({ article_id, articleLoaded }) {
     const [comments, setComments] = useState(null);
 
     useEffect(() => {
@@ -16,10 +17,14 @@ function ArticleComments({ article_id }) {
             });
     }, []);
 
+    if (comments === null) {
+        return articleLoaded ? <Loading /> : null;
+    }
+
     return (
         <>
             <div className="comment-divider">Comments</div>
-            <AddComment article_id={article_id} setComments={setComments}/>
+            <AddComment article_id={article_id} setComments={setComments} />
             <CommentList article_id={article_id} comments={comments} />
         </>
     );
