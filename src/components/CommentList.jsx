@@ -1,21 +1,7 @@
-import { useEffect, useState } from "react";
-import { getCommentsByArticleId } from "../utils/api";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
 
-function CommentList({ article_id }) {
-    const [comments, setComments] = useState(null);
-
-    useEffect(() => {
-        getCommentsByArticleId(article_id)
-            .then((comments) => {
-                setComments(comments);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
-
+function CommentList({ comments }) {
     if (comments === null) {
         return <Loading />;
     }
