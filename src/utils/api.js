@@ -1,5 +1,4 @@
 import axios from "axios";
-import { linkWithParams } from "./api_utils";
 
 const api = axios.create({ baseURL: "https://nc-news-moag.onrender.com/api" });
 
@@ -10,8 +9,7 @@ export function getTopics() {
 }
 
 export function getArticles(searchParams) {
-    const link = linkWithParams("/articles", searchParams);
-    return api.get(link).then((response) => {
+    return api.get("/articles", { params: searchParams }).then((response) => {
         return response.data.articles;
     });
 }

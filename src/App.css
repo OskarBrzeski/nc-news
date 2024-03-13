@@ -64,6 +64,33 @@ header {
     margin: 0 auto;
 }
 
+.article-sort {
+    width: 100%;
+    max-width: 482px;
+    margin: 0 auto;
+}
+
+.article-sort-inside {
+    /* display: flex;
+    flex-direction: column; */
+
+    width: calc(100%-18px);
+    max-width: 430px;
+
+    padding: 8px;
+    border: 2px solid;
+    margin: 16px;
+}
+
+.sort-by-text {
+    font-size: 16pt;
+}
+
+.radio-button-grid {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .article-list li {
     /* display: flex;
     justify-content: center; */
