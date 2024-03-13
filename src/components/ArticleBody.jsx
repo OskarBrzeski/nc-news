@@ -3,7 +3,7 @@ import { getArticleById, updateArticleVotes } from "../utils/api";
 import VoteCounter from "./VoteCounter";
 import Loading from "./Loading";
 
-function ArticleBody({ article_id, setArticleLoaded }) {
+function ArticleBody({ article_id, setArticleLoaded, setErrorOccured }) {
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function ArticleBody({ article_id, setArticleLoaded }) {
                 setArticleLoaded(true);
             })
             .catch((error) => {
-                console.log(error);
+                setErrorOccured(error);
             });
     }, []);
 

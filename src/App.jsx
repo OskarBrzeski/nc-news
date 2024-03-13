@@ -4,6 +4,17 @@ import ArticlesQuery from "./components/ArticlesQuery";
 import Header from "./components/Header";
 import ArticlePage from "./components/ArticlePage";
 import TopicsPage from "./components/TopicsPage";
+import ErrorPage from "./components/ErrorPage";
+import HomePage from "./components/HomePage";
+
+const pathNotExistError = {
+    message: "Request failed with status code 404",
+    response: {
+        data: {
+            desc: "Invalid URL given",
+        },
+    },
+};
 
 function App() {
     return (
@@ -11,12 +22,17 @@ function App() {
             <Header />
             <main>
                 <Routes>
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/articles" element={<ArticlesQuery />} />
                     <Route
                         path="/articles/:article_id"
                         element={<ArticlePage />}
                     />
                     <Route path="/topics" element={<TopicsPage />} />
+                    <Route
+                        path="*"
+                        element={<ErrorPage error={pathNotExistError} />}
+                    />
                 </Routes>
             </main>
         </>

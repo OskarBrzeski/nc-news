@@ -41,7 +41,7 @@ function ArticleSort({ searchParams, setSearchParams }) {
                         Date
                         <input
                             type="radio"
-                            class="sort-radio"
+                            className="sort-radio"
                             id="sort-created_at"
                             name="sort-by"
                             value="created_at"
@@ -53,7 +53,7 @@ function ArticleSort({ searchParams, setSearchParams }) {
                         Comments
                         <input
                             type="radio"
-                            class="sort-radio"
+                            className="sort-radio"
                             id="sort-comment_count"
                             name="sort-by"
                             value="comment_count"
@@ -65,7 +65,7 @@ function ArticleSort({ searchParams, setSearchParams }) {
                         Votes
                         <input
                             type="radio"
-                            class="sort-radio"
+                            className="sort-radio"
                             id="sort-votes"
                             name="sort-by"
                             value="votes"

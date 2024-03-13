@@ -3,18 +3,18 @@ import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 
-function ArticleList({ searchParams }) {
+function ArticleList({ searchParams, setErrorOccured }) {
     const [articles, setArticles] = useState(null);
 
     useEffect(() => {
-        setArticles(null)
-        
+        setArticles(null);
+
         getArticles(searchParams)
             .then((articles) => {
                 setArticles(articles);
             })
             .catch((error) => {
-                console.log(error);
+                setErrorOccured(error);
             });
     }, [searchParams]);
 

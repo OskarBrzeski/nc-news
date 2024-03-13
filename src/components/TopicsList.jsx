@@ -3,7 +3,7 @@ import { getTopics } from "../utils/api";
 import TopicCard from "./TopicCard";
 import Loading from "./Loading";
 
-function TopicsList() {
+function TopicsList({ setErrorOccured }) {
     const [topics, setTopics] = useState(null);
 
     useEffect(() => {
@@ -12,7 +12,8 @@ function TopicsList() {
                 setTopics(topics);
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error)
+                setErrorOccured(error)
             });
     }, []);
 
@@ -23,9 +24,11 @@ function TopicsList() {
     return (
         <ul className="topic-list">
             {topics.map((topic) => {
-                return <li key={topic.slug}>
-                    <TopicCard topic={topic} />
-                </li>;
+                return (
+                    <li key={topic.slug}>
+                        <TopicCard topic={topic} />
+                    </li>
+                );
             })}
         </ul>
     );
