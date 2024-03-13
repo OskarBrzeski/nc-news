@@ -5,6 +5,7 @@ function Header() {
         <header>
             <h1>NC News</h1>
             <nav className="navbar">
+                <Link to="/">Home</Link>
                 <Link to="/articles">Articles</Link>
                 <Link to="/topics">Topics</Link>
             </nav>
