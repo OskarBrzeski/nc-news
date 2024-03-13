@@ -7,6 +7,8 @@ function ArticleList({ searchParams }) {
     const [articles, setArticles] = useState(null);
 
     useEffect(() => {
+        setArticles(null)
+        
         getArticles(searchParams)
             .then((articles) => {
                 setArticles(articles);
@@ -14,7 +16,7 @@ function ArticleList({ searchParams }) {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [searchParams]);
 
     if (articles === null) {
         return <Loading />;
