@@ -15,7 +15,7 @@ function VoteCounter({ subject_id, votes, voteUpdater }) {
                 setCurrentVotes(() => serverVotes);
             })
             .catch((error) => {
-                setResponseMsg("Your vote was lost in transit");
+                setResponseMsg("Failed to vote");
                 setCurrentVotes((currentVotes) => currentVotes - voteChange);
             })
             .finally(() => {
