@@ -10,7 +10,8 @@ function ArticleSort({ searchParams, setSearchParams }) {
         }
 
         const sorted_by = searchParams.get("sorted_by");
-        if (sorted_by) {
+        // if (sorted_by) {
+        if (["created_at", "comment_count", "votes"].includes(sorted_by)) {
             document.getElementById(`sort-${sorted_by}`).checked = true;
         } else {
             document.getElementById("sort-created_at").checked = true;
