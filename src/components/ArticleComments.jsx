@@ -23,7 +23,7 @@ function ArticleComments({ article_id, articleLoaded }) {
 
     return (
         <>
-            <div className="comment-divider">Comments</div>
+            <h2 className="comment-divider">Comments</h2>
             <AddComment article_id={article_id} setComments={setComments} />
             <CommentList article_id={article_id} comments={comments} />
         </>

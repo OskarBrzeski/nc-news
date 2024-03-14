@@ -36,7 +36,7 @@ function ArticleSort({ searchParams, setSearchParams }) {
     return (
         <section className="article-sort">
             <div className="article-sort-inside">
-                <div className="sort-by-text">Sort By</div>
+                <h2 className="sort-by-text">Sort By</h2>
                 <div className="radio-button-grid">
                     <label htmlFor="sort-created_at">
                         Date
