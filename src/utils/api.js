@@ -53,3 +53,9 @@ export function postComment(article_id, username, body) {
 export function deleteComment(comment_id) {
     return api.delete(`/comments/${comment_id}`);
 }
+
+export function getUser(username) {
+    return api.get(`/users/${username}`).then((response) => {
+        return response.data.user;
+    });
+}
