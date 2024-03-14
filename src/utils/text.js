@@ -2,7 +2,7 @@ export function shortenTitle(title) {
     let newTitle = "";
 
     for (let word of title.split(" ")) {
-        if (newTitle.length > 60) {
+        if (newTitle.length > 50) {
             newTitle = newTitle.slice(1) + "...";
             return newTitle;
         }
