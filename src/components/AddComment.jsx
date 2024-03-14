@@ -70,6 +70,7 @@ function AddComment({ article_id, setComments }) {
             <form onSubmit={handleSubmit} className="add-comment-form">
                 <label htmlFor="comment">Enter comment</label>
                 <textarea
+                    id="comment"
                     name="comment"
                     rows="3"
                     value={inputComment}
