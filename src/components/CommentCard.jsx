@@ -40,7 +40,7 @@ function CommentCard({ comment }) {
                     >
                         Delete Comment
                     </button>
-                    <div className="comment-delete-msg">{errorMsg}</div>
+                    <span className="comment-delete-msg">{errorMsg}</span>
                 </div>
             );
         }
@@ -49,17 +49,17 @@ function CommentCard({ comment }) {
     if (deleted) {
         return (
             <section className="comment-card">
-                <div>{deleted}</div>
+                <p className="comment-deleted">{deleted}</p>
             </section>
         );
     }
 
     return (
         <section className="comment-card">
-            <div>
+            <p className="comment-card-text">
                 {author} - {formatDateTime(created_at)}
-            </div>
-            <div className="comment-body">{body}</div>
+            </p>
+            <p className="comment-card-text">{body}</p>
             <VoteCounter
                 subject_id={comment_id}
                 votes={votes}

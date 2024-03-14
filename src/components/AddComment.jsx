@@ -55,13 +55,13 @@ function AddComment({ article_id, setComments }) {
         if (inputStatus === null) {
             return null;
         } else if (inputStatus === "loading") {
-            return <div>Waiting for response from server</div>;
+            return <span>Waiting for response from server</span>;
         } else if (inputStatus === "empty") {
-            return <div>Cannot post empty comment</div>;
+            return <span>Cannot post empty comment</span>;
         } else if (inputStatus === "error") {
-            return <div>An error occured and your comment was not posted</div>;
+            return <span>An error occured and your comment was not posted</span>;
         } else {
-            return <div>Unknown error occured</div>;
+            return <span>Unknown error occured</span>;
         }
     }
 

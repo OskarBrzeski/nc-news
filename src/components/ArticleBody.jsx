@@ -24,8 +24,8 @@ function ArticleBody({ article_id, setArticleLoaded, setErrorOccured }) {
     return (
         <section className="article-body">
             <h2>{article.title}</h2>
-            <div>Author: {article.author}</div>
-            <div>Topic: {article.topic}</div>
+            <p className="article-body-meta">Author: {article.author}</p>
+            <p className="article-body-meta">Topic: {article.topic}</p>
 
             <img src={article.article_img_url} alt="current article" />
             <p>{article.body}</p>

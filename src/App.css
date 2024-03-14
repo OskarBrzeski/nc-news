@@ -27,15 +27,17 @@ header {
 .horizontal-left {
     text-align: left;
     min-width: 125px;
+    margin: 0;
 }
 
 .horizontal-right {
     text-align: right;
     min-width: 125px;
+    margin: 0;
 }
 
 .navbar a {
-    margin: 0 8px;
+    margin: 0 12px;
 }
 
 .topic-list {
@@ -86,6 +88,7 @@ header {
 
 .sort-by-text {
     font-size: 16pt;
+    margin: 0;
 }
 
 .radio-button-grid {
@@ -122,15 +125,21 @@ header {
     font-size: 18pt;
     text-align: left;
     padding: 0px 8px 4px 8px;
+    margin: 0;
 }
 
 .article-card-left {
     text-align: left;
     padding: 0px 8px;
+    margin: 0;
 }
 
 .article-body {
     text-align: left;
+}
+
+.article-body-meta {
+    margin: 0;
 }
 
 .article-body img {
@@ -142,6 +151,7 @@ header {
 
 .comment-divider {
     font-size: 20pt;
+    font-weight: 400;
     border-bottom: 2px solid;
     margin: 8px auto;
 }
@@ -167,8 +177,9 @@ header {
     padding: 8px;
 }
 
-.comment-body {
-    margin: 8px 0;
+.comment-card-text {
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
 .comment-delete-button {
@@ -180,6 +191,10 @@ header {
     margin: 8px 0 0 0;
 }
 
+.comment-deleted {
+    text-align: center;
+}
+
 .vote-block {
     display: flex;
 }
@@ -188,6 +203,11 @@ header {
     width: 25px;
     height: 25px;
     padding: 0;
+}
+
+.vote-block p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .vote-block * {

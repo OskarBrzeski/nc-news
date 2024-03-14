@@ -16,15 +16,15 @@ function ArticleCard({ article }) {
         <Link to={`/articles/${article_id}`}>
             <section className="article-card">
                 <img src={article_img_url} alt={`article titled ${title}`} />
-                <div className="article-card-title">{shortenTitle(title)}</div>
-                <div className="article-card-left">
+                <h2 className="article-card-title">{shortenTitle(title)}</h2>
+                <p className="article-card-left">
                     {formatDateTime(created_at)}
-                </div>
+                </p>
                 <div className="horizontal-text">
-                    <div className="horizontal-left">{author}</div>
-                    <div className="horizontal-right">
+                    <p className="horizontal-left">{author}</p>
+                    <p className="horizontal-right">
                         {votes} votes | {comment_count} comments
-                    </div>
+                    </p>
                 </div>
             </section>
         </Link>

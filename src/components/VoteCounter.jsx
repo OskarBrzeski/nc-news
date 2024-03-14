@@ -25,7 +25,7 @@ function VoteCounter({ subject_id, votes, voteUpdater }) {
 
     return (
         <section className="vote-block">
-            <div>Votes: {currentVotes}</div>
+            <p>Votes: {currentVotes}</p>
             <button disabled={disableButtons} onClick={() => updateVote(1)}>
                 ⬆
             </button>
