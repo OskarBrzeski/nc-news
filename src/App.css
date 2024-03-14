@@ -110,6 +110,13 @@ header {
     border-bottom: 2px solid;
 }
 
+@media only screen and (min-width: 768px) {
+    .article-card img {
+        height: 300px;
+        background-size: cover;
+    }
+}
+
 .article-card-title {
     min-height: 72px;
     font-size: 18pt;

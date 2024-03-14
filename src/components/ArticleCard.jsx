@@ -9,7 +9,7 @@ function ArticleCard({ article }) {
         author,
         comment_count,
         created_at,
-        votes
+        votes,
     } = article;
 
     return (
@@ -17,7 +17,9 @@ function ArticleCard({ article }) {
             <section className="article-card">
                 <img src={article_img_url} alt={`article titled ${title}`} />
                 <div className="article-card-title">{shortenTitle(title)}</div>
-                <div className="article-card-left">{formatDateTime(created_at)}</div>
+                <div className="article-card-left">
+                    {formatDateTime(created_at)}
+                </div>
                 <div className="horizontal-text">
                     <div className="horizontal-left">{author}</div>
                     <div className="horizontal-right">
