@@ -165,7 +165,7 @@ header {
 }
 
 .comment-delete-button {
-    padding: 4px;
+    padding: 4px 8px;
     margin: 8px 8px 0 0;
 }
 
@@ -184,7 +184,7 @@ header {
 }
 
 .vote-block * {
-    margin-right: 8px;
+    margin-right: 12px;
 }
 
 .add-comment-form {

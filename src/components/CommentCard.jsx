@@ -24,7 +24,7 @@ function CommentCard({ comment }) {
             })
             .catch((error) => {
                 setDeleted("");
-                setErrorMsg("Could not delete comment");
+                setErrorMsg("Failed to delete");
                 setDisabledButton(false);
             });
     }
