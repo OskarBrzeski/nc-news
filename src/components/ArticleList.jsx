@@ -3,7 +3,7 @@ import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 
-function ArticleList({ searchParams, setErrorOccured }) {
+function ArticleList({ searchParams, setErrorOccured, filterByUser }) {
     const [articles, setArticles] = useState(null);
 
     useEffect(() => {
@@ -11,7 +11,15 @@ function ArticleList({ searchParams, setErrorOccured }) {
 
         getArticles(searchParams)
             .then((articles) => {
-                setArticles(articles);
+                if (filterByUser) {
+                    setArticles(
+                        articles.filter((article) => {
+                            return article.author === filterByUser;
+                        })
+                    );
+                } else {
+                    setArticles(articles);
+                }
             })
             .catch((error) => {
                 setErrorOccured(error);
