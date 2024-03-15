@@ -344,3 +344,7 @@ header {
     max-width: 450px;
     margin: 16px auto;
 }
+
+.new-article-button {
+margin-top: 8px;
+}
