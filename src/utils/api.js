@@ -42,6 +42,20 @@ export function updateCommentVotes(comment_id, voteChange) {
         });
 }
 
+export function postArticle(author, title, body, topic, article_img_url = "") {
+    return api
+        .post("/articles", {
+            author,
+            title,
+            body,
+            topic,
+            article_img_url,
+        })
+        .then((response) => {
+            return response.data.article;
+        });
+}
+
 export function postComment(article_id, username, body) {
     return api
         .post(`/articles/${article_id}/comments`, { username, body })
