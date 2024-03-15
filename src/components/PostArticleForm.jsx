@@ -70,9 +70,8 @@ function PostArticleForm({
                 value={inputs.topic}
                 onChange={hangleChange}
                 onBlur={handleBlur}
-                defaultValue="empty"
             >
-                <option hidden disabled selected value="empty"></option>
+                <option hidden disabled value="empty"></option>
                 {topicOptions()}
             </select>
 
