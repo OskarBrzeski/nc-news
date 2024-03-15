@@ -285,6 +285,10 @@ header {
         font-size: 20pt;
         margin: 4px;
     }
+
+    .user-details-text button {
+        margin-top: 10px;
+    }
 }
 
 .user-article-divider {
@@ -346,5 +350,22 @@ header {
 }
 
 .new-article-button {
-margin-top: 8px;
+    margin-top: 8px;
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+
+    min-width: 350px;
+    max-width: 500px;
+    margin: 16px auto;
+}
+
+.sign-in-form input {
+    font-size: 12pt;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    padding: 6px;
+    margin-bottom: 24px;
 }
