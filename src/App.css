@@ -36,6 +36,10 @@ header {
     margin: 0;
 }
 
+.form-empty {
+    border: 1px solid red;
+}
+
 .navbar a {
     margin: 0 12px;
 }
@@ -237,10 +241,6 @@ header {
     width: 150px;
 }
 
-.add-comment-form-empty {
-    border: 1px solid red;
-}
-
 .user-details {
     padding: 16px;
     margin: 16px;
@@ -292,4 +292,59 @@ header {
     font-weight: 400;
     border-bottom: 2px solid;
     margin: 8px auto;
+}
+
+.post-article {
+    min-width: 350px;
+    max-width: 800px;
+    margin: 16px auto;
+}
+
+.post-article-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-article-form label {
+    text-align: left;
+    font-size: 12pt;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.post-article-form input {
+    margin-bottom: 12px;
+    font-size: 12pt;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.post-article-form select {
+    margin-bottom: 12px;
+    font-size: 12pt;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.post-article-form textarea {
+    margin-bottom: 12px;
+    font-size: 12pt;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.post-article-form button {
+    margin-top: 8px;
+}
+
+/* .article-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 16px;
+} */
+
+.article-card-li {
+    width: 100%;
+    max-width: 450px;
+    margin: 16px auto;
+}
+
+.new-article-button {
+margin-top: 8px;
 }

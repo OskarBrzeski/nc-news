@@ -7,6 +7,7 @@ import TopicsPage from "./components/TopicsPage";
 import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
 import UserPage from "./components/UserPage";
+import PostArticle from "./components/PostArticle";
 
 const pathNotExistError = {
     message: "Request failed with status code 404",
@@ -31,6 +32,7 @@ function App() {
                     />
                     <Route path="/topics" element={<TopicsPage />} />
                     <Route path="/user" element={<UserPage />} />
+                    <Route path="/create-article" element={<PostArticle />} />
                     <Route
                         path="*"
                         element={<ErrorPage error={pathNotExistError} />}

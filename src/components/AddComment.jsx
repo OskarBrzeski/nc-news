@@ -15,9 +15,9 @@ function AddComment({ article_id, setComments }) {
 
     function handleBlur(event) {
         if (inputComment.length === 0) {
-            event.target.classList.add("add-comment-form-empty");
+            event.target.classList.add("form-empty");
         } else {
-            event.target.classList.remove("add-comment-form-empty");
+            event.target.classList.remove("form-empty");
         }
     }
 
