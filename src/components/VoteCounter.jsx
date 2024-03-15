@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 function VoteCounter({ subject_id, votes, voteUpdater }) {
     const [currentVotes, setCurrentVotes] = useState(votes);
     const [responseMsg, setResponseMsg] = useState(null);
     const [disableButtons, setDisableButtons] = useState(false);
+
+    const { user } = useContext(UserContext);
 
     function updateVote(voteChange) {
         setDisableButtons(true);
@@ -23,15 +26,31 @@ function VoteCounter({ subject_id, votes, voteUpdater }) {
             });
     }
 
+    function renderButtons() {
+        if (user) {
+            return (
+                <>
+                    <button
+                        disabled={disableButtons}
+                        onClick={() => updateVote(1)}
+                    >
+                        ⬆
+                    </button>
+                    <button
+                        disabled={disableButtons}
+                        onClick={() => updateVote(-1)}
+                    >
+                        ⬇
+                    </button>
+                </>
+            );
+        }
+    }
+
     return (
         <section className="vote-block">
             <p>Votes: {currentVotes}</p>
-            <button disabled={disableButtons} onClick={() => updateVote(1)}>
-                ⬆
-            </button>
-            <button disabled={disableButtons} onClick={() => updateVote(-1)}>
-                ⬇
-            </button>
+            {renderButtons()}
             {responseMsg ? <div>{responseMsg}</div> : null}
         </section>
     );
